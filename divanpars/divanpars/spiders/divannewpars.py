@@ -1,11 +1,8 @@
 import scrapy
-
-
 class DivannewparsSpider(scrapy.Spider):
     name = "divannewpars"
     allowed_domains = ['https://divan.ru']
     start_urls = ['https://www.divan.ru/krasnodar/category/svet']
-
     def parse(self, response):
         divans = response.css('div._Ud0k')
         for divan in divans:
